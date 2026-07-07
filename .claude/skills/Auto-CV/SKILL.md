@@ -57,25 +57,24 @@ bash .claude/skills/Auto-CV/shell/install-packages.sh 2>/dev/null || true
 
 **若命令失败（未安装）**：
 
-1. 告知用户：「检测到您尚未安装 LaTeX 编译环境，正在为您自动安装 MiKTeX...」
-2. 检查是否有 winget：
-   - **若有 winget**：执行安装
+1. 检测操作系统：
+   - **Linux/WSL2**：执行
+     ```bash
+     sudo apt-get install -y texlive-xetex texlive-latex-base texlive-latex-recommended texlive-fonts-recommended texlive-lang-chinese latexmk
+     ```
+   - **Windows (winget)**：执行
      ```bash
      winget install --id MiKTeX.MiKTeX -e --accept-source-agreements --accept-package-agreements
      ```
-   - **若无 winget**：跳到步骤4，提示手动安装
-3. 安装完成后，告知用户：
-   > 「MiKTeX 安装完成！**请重启终端，然后运行以下命令完成初始化：**
-   > ```bash
-   > bash .claude/skills/Auto-CV/shell/install-packages.sh
-   > ```
-   > 初始化完成后再次运行 `/Auto-CV` 即可。」
-4. **终止本次执行**，让用户重启终端后再来。
-
-> **重要说明**：
-> - winget 在 Windows 10 1709+ 及 Windows 11 上默认可用
-> - MiKTeX 安装后需要**重启终端**才能生效，这是 LaTeX 生态的限制
-> - `install-packages.sh` 会配置静默安装模式并预装所有宏包，**彻底杜绝弹框**
+   - **macOS**：执行
+     ```bash
+     brew install --cask mactex
+     ```
+2. 安装完成后，运行初始化：
+   ```bash
+   bash .claude/skills/Auto-CV/shell/install-packages.sh
+   ```
+3. **如果安装了 MiKTeX（Windows）**，需要重启终端才能生效。**TeX Live（Linux/macOS）** 不需要重启。
 
 ---
 

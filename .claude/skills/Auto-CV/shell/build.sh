@@ -17,19 +17,8 @@ if ! command -v xelatex &> /dev/null; then
     exit 1
 fi
 
-# ============ MiKTeX 自动安装配置（不弹确认框）============
-# initexmf 是 MiKTeX 官方配置工具，AutoInstall=1 禁止弹框
-initexmf --set-config-value "[MPM]AutoInstall=1" 2>/dev/null || true
-
-# ============ 预安装常用宏包（首次编译加速）============
-if command -v mpm &> /dev/null; then
-    mpm --install=xltxtra --install=realscripts --install=metalogo \
-        --install=xifthen --install=ifmtarg --install=geometry \
-        --install=titlesec --install=nth --install=xecjk \
-        --install=ctex --install=cite --install=setspace \
-        --install=hyperref --install=fontspec --install=etoolbox \
-        --install=oberdiek --install=helvetic 2>/dev/null || true
-fi
+# ============ TeX Live 环境下无需额外配置 ============
+# TeX Live 包管理器 tlmgr 可选，不做强制要求
 
 # ============ 编译简历 ============
 echo "编译 resume.tex ..."
