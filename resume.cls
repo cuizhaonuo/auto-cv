@@ -57,13 +57,13 @@
   {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
   {}                           % Can be used to insert code before the heading
   [\titlerule]                 % Inserts a horizontal line after the heading
-\titlespacing*{\section}{0cm}{*1}{*1}
+\titlespacing*{\section}{0cm}{*2.2}{*1.4}
 
 \titleformat{\subsection}
   {\large\raggedright}
   {}{0em}
   {}
-\titlespacing*{\subsection}{0cm}{*1}{*0.5}
+\titlespacing*{\subsection}{0cm}{*1.4}{*0.5}
 
 \newcommand{\datedsection}[2]{%
   \section[#1]{#1 \hfill #2}%
@@ -99,7 +99,7 @@
 }
 
 \newcommand{\yourphoto}[1]{
-  \hfill \smash{\includegraphics[width={#1}\paperwidth]{images/you.jpg}}
+  \hfill \smash{\raisebox{2.5mm}{\includegraphics[width={#1}\paperwidth]{images/you.jpg}}}\hspace*{5mm}
 }
 
 \newcommand{\role}[2]{

@@ -16,63 +16,64 @@
 %***********个人信息**************
 \MyName{崔兆诺}
 \sepspace
-\SimpleEntry{\textbf{籍贯：}山东省泰安市}
+\SimpleEntry{\textbf{年龄：}24岁}
 \SimpleEntry{\textbf{邮箱：}cuizhaonuo24@mails.ucas.ac.cn}
 \SimpleEntry{\textbf{电话：}18325480212}
-\SimpleEntry{\textbf{政治面貌：}群众}
-\SimpleEntry{\textbf{通讯地址：}北京市朝阳区}
+\SimpleEntry{\textbf{地址：}北京市朝阳区}
+\SimpleEntry{\textbf{GitHub：}\href{https://github.com/cuizhaonuo}{github.com/cuizhaonuo}}
 
 %************照片**************
-%\yourphoto{0.13}  % 不需要照片
+\yourphoto{0.12}  % 照片宽度为页面宽度的0.12倍
 
 %***********教育背景**************
+\vspace{-4mm}
 \section{教育背景}
-\datedsubsection{\textbf{中国科学院大学}，生物与医药，\textit{硕士}}{2024.9 - 至今}
+\datedsubsection{\textbf{中国科学院大学}｜生物与医药｜\textit{硕士}}{2024.09 - 至今}
+{培养单位：中国科学院遗传与发育生物学研究所｜研究方向：植物表型与计算机视觉}
 
-\datedsubsection{\textbf{山东农业大学}，计算机科学与技术，\textit{本科}}{2020.9 - 2024.6}
+\datedsubsection{\textbf{山东农业大学}｜计算机科学与技术｜\textit{本科}}{2020.09 - 2024.06}
 
 
 %***********项目经历**************
+\sepspace
 \section{项目经历}
 
-\datedsubsection{\textbf{小麦小穗数高通量自动获取}}{2026.3 - 2026.7}
-{工作内容：基于MaskDINO构建端到端小穗计数模型，实现麦穗分割与小穗定位一体化}
-\Content
-{ 设计嵌套式两级匈牙利匹配机制，外层匹配麦穗实例、内层匹配小穗点，实现分割与计数一体化建模；}
-{ 提出框相对归一化坐标回归策略，将小穗点约束在所属麦穗框内，缓解跨穗漂移与背景误定位；}
-{ 引入穗内k近邻距离约束，利用小穗沿穗轴规律排列的空间先验，增强密集小穗点匹配收敛性。}
-
-\datedsubsection{\textbf{植物叶片病害半监督识别与鲁棒学习}}{2026.5 - 2026.7}
-{工作内容：基于Mean Teacher半监督框架优化植物病害识别，解决标注稀缺与噪声标签问题}
-\Content
-{ 设计不确定性感知Mean Teacher半监督学习框架，通过学生-教师一致性训练利用少量标注数据提升模型泛化能力；}
-{ 引入DWT频域特征增强，将低频结构与高频纹理信息融合到CNN特征中，增强早期病斑与细粒度病害表达；}
-{ 设计监督对比学习与KL散度伪标签修正策略，优化特征分布并缓解噪声标签与误差累积问题。}
-
 \datedsubsection{\textbf{密集麦穗实例分割与检测算法优化}}{2025.9 - 2026.2}
-{工作内容：基于MaskDINO构建麦穗实例分割与检测模型，优化密集遮挡场景精度}
+{工作内容：基于MaskDINO构建密集麦穗检测与实例分割模型，优化query匹配策略与训练监督机制}
 \Content
-{ 设计多分支one-to-one/one-to-many匹配训练机制，通过解耦query学习增强密集目标监督信号；}
-{ 提出Query-Level去重与位置感知匹配策略，从query去重和位置约束角度提升训练稳定性与预测质量；}
-{ 在Swin-L MaskDINO强baseline上实例分割AP+3.4\%、检测AP+4.78\%，密集场景检测效果显著提升。}
+{ 设计one-to-one/one-to-many多分支匹配训练机制，解耦query学习过程，增强密集麦穗场景正样本监督信号，缓解遮挡目标漏检与监督不足问题；}
+{ 提出Query-Level去重与位置感知匹配策略，从query冗余抑制和空间位置约束两方面提升训练稳定性，降低密集场景重复预测与定位偏移；}
+{ 在Swin-L MaskDINO强baseline上bbox AP由57.69提升至62.04、segm AP由55.29提升至58.53，bbox AP75提升7.01、segm AP75提升5.91个百分点，显著提升密集遮挡下高质量定位与分割。}
 
-\datedsubsection{\textbf{山东省软件设计比赛}，省一等奖}{2023.6 - 2023.9}
-{工作内容：设计深度学习病虫害识别模型，开发智能问答与论坛等后端功能}
+\datedsubsection{\textbf{无人机麦穗图像小穗点定位与计数}}{2026.3 - 2026.7}
+{工作内容：基于MaskDINO构建麦穗分割与小穗点定位一体化模型，从麦穗图像中自动提取小穗数量}
 \Content
-{ 设计并优化基于深度学习的病虫害图像识别模型，实现作物病害自动分类与防治知识精准推荐；}
-{ 基于AC自动机实现病虫害知识库规则匹配智能问答系统，支撑常见病虫害问题自动应答；}
-{ 搭建SpringBoot后端框架与RESTful API，实现论坛交流、知识查询等核心功能模块。}
+{ 设计嵌套式两级匈牙利匹配机制，外层完成麦穗实例匹配、内层完成穗内小穗点匹配，实现麦穗分割、小穗定位与计数的端到端联合建模；}
+{ 提出框相对归一化坐标回归策略，将小穗点坐标约束在所属麦穗实例框内，缓解跨穗漂移、背景误定位和密集点回归不稳定问题；}
+{ 引入穗内k近邻距离约束，利用小穗沿穗轴规律排列的空间先验增强点匹配收敛性；测试集小穗计数MAE 1.18、RMSE 1.74、R$^2$ 0.94，点定位F1-score 89.6\%，支持高通量小穗数自动统计。}
+
+\datedsubsection{\textbf{基于改进YOLOv12的作物株高检测与表型测量}}{2025.9 - 2025.12}
+{工作内容：基于改进YOLOv12构建多角度作物图像检测与株高测量流程，实现株高表型自动提取与批量分析}
+\Content
+{ 将Area Attention改进为Adaptive Grid Attention，通过可学习采样偏移与动态调制机制增强复杂植株形态建模，提升多角度场景检测鲁棒性；}
+{ 设计ScoringAttention前景感知模块，经Decoder生成植株前景掩码仅在前景区域计算自注意力，抑制土壤、盆栽、背景纹理等冗余干扰；}
+{ 改进后模型Box AP 96.7、AP50 98.5，株高测量MAE 1.42cm、RMSE 2.08cm、R$^2$ 0.98、MAPE 2.6\%；完成推理可视化界面与Docker部署，支持批量处理、结果导出与环境快速复现。}
+
+\datedsubsection{\textbf{禾本科作物器官语义分割算法优化}}{2026.1 - 2026.4}
+{工作内容：基于Swin Transformer构建禾本科作物器官级语义分割模型，实现叶片、穗部、茎秆等器官像素级识别}
+\Content
+{ 采用分层Swin Transformer主干网络，通过移位窗口多头自注意力建模多尺度上下文信息，增强作物器官跨尺度和长距离依赖表达能力；}
+{ 设计CFL/CFH跨阶段特征融合模块，分别强化浅层纹理边界与高层器官语义信息，提升弯折叶片、密集穗部和遮挡器官的分割质量；}
+{ 引入多任务语义重建模块，经MT Encoder与query fusion建模器官层级关系增强结构一致性；模型mIoU 84.7\%、mAcc 91.2\%、Pixel Accuracy 95.6\%，穗部IoU 82.4\%、叶片IoU 86.8\%。}
 
 
-%***********个人评价**************
-\section{个人评价}
+%***********专业技能**************
+\section{专业技能}
+\SimpleEntry{\textbf{编程与工程：}Python、PyTorch、OpenCV、Linux、Git、Docker，具备数据处理、模型训练、批量推理与容器化部署经验}
+\SimpleEntry{\textbf{计算机视觉：}熟悉目标检测、实例分割、语义分割、分类、点回归、半监督学习等任务}
+\SimpleEntry{\textbf{模型与框架：}熟悉YOLO、RT-DETR、Faster R-CNN、MaskDINO、U-Net等模型，具备Detectron2 / MMDetection / Ultralytics使用经验}
+\SimpleEntry{\textbf{工程能力：}推理可视化界面开发、实验结果分析、模型部署、技术文档撰写}
+\SimpleEntry{\textbf{语言与荣誉：}CET-4/6；山东省软件设计比赛省一等奖；校三等奖学金}
 
-{CET-4/6通过，具有良好的英文文献阅读与学术写作能力，能够独立撰写技术报告与学术论文}
-
-{精通Python、PyTorch与OpenCV，具备深度学习模型训练与优化的项目实践经验}
-
-{获校三等奖学金，微视频创作比赛校三等奖、演讲比赛学院二等奖，综合素质全面发展}
-
-{热爱篮球运动，曾作为学院篮球队队员参加院级比赛，具备良好的团队协作与沟通能力}
 
 \end{document}
